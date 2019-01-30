@@ -6,28 +6,26 @@ module.exports = {
         rules: [
             {
                 test: /\.(ts|tsx)$/,
-                use: ['babel-loader']
+                use: ['babel-loader'],
             },
             {
                 test: /\.js$/,
-                use: ["source-map-loader"],
-                enforce: "pre"
-            }
-        ]
+                use: ['source-map-loader'],
+                enforce: 'pre',
+            },
+        ],
     },
     resolve: {
-        extensions: ['*', '.js', '.jsx', '.ts', '.tsx']
+        extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
     },
     output: {
         path: __dirname + '/dist',
         publicPath: '/',
-        filename: 'bundle.js'
+        filename: 'bundle.js',
     },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ],
+    plugins: [new webpack.HotModuleReplacementPlugin()],
     devServer: {
         contentBase: './dist',
-        hot: true
-    }
+        hot: true,
+    },
 };
